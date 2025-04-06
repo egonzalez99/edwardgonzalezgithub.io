@@ -1,0 +1,87 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f0f0f0;
+    color: #333;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    background: #444;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+h1, h2, h3, h4 {
+    font-size: 37px;
+    color: black;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+section {
+    padding: 60px 20px;
+    background: #ddd;
+    margin-bottom: 10px;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+}
+
+.profile, .contact-icons {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+    gap: 20px; 
+    justify-items: center;
+    
+  }
+  .skills-grid > div {
+    background-color: #f1f1f1;
+    border: 1px solid black;
+    padding: 10px;
+    font-size: 30px;
+    text-align: center;
+
+  }
+
+.box {
+    background: white;
+    padding: 20px;
+    border: 1px solid #bbb;
+    flex: 1 1 45%;
+    text-align: center;
+    min-width: 200px;
+}
+
+.contact-icons img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
