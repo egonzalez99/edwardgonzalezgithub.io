@@ -37,6 +37,13 @@ nav a:hover {
     text-decoration: underline;
 }
 
+.profile, .contact-icons {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 section {
     padding: 60px 20px;
     background: #ddd;
@@ -46,39 +53,59 @@ section {
 .container {
     max-width: 800px;
     margin: auto;
-}
+    text-align: center;
 
-.profile, .contact-icons {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
 }
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px; 
     justify-items: center;
-    
   }
+
   .skills-grid > div {
     background-color: #f1f1f1;
     border: 1px solid black;
     padding: 10px;
     font-size: 30px;
     text-align: center;
-
   }
 
 .box {
     background: white;
     padding: 20px;
     border: 1px solid #bbb;
-    flex: 1 1 45%;
     text-align: center;
+    width: 200px;    
+    height: 200px;
     min-width: 200px;
+    align-items: center;
+
 }
+
+.box img {
+    width: 100px;
+    height: 100px;
+    align-items: center;
+    object-fit: contain;
+}
+
+.box-about {
+    background: white;
+    padding: 20px;
+    border: 1px solid #bbb;
+    text-align: center;
+    width: 400px;    
+    height: 200px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+
 
 .contact-icons img {
     width: 60px;
