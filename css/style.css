@@ -54,7 +54,6 @@ section {
     max-width: 800px;
     margin: auto;
     text-align: center;
-
 }
 
 .skills-grid {
@@ -93,20 +92,41 @@ section {
 
 .box-about {
     background: white;
-    padding: 20px;
-    border: 1px solid #bbb;
-    text-align: center;
-    width: 400px;    
-    height: 200px;
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
+    width: 500px;
+    height: 150px;
+    margin-top: 50px;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
+    line-height: 1.6;
+    white-space: normal;
+    font-weight: bold;
     justify-content: center;
     align-items: center;
     font-size: 20px;
 }
 
+.box-desc {
+    background: white;
+    width: 500px;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
+    line-height: 1.6;
+    font-size: 20px;
+    white-space: normal;
+    font-weight: bold;
+}
 
+.box-profileimg {
+    border-radius: 50%;
+    width: 500px; 
+    height: 500px;
+}
 .contact-icons img {
     width: 60px;
     height: 60px;
