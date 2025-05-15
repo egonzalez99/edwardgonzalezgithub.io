@@ -122,13 +122,16 @@ section {
     font-weight: bold;
 }
 
-.box-profileimg {
+.box-profileimg img {
     border-radius: 50%;
     width: 500px; 
     height: 500px;
+    object-fit: cover;
 }
+
 .contact-icons img {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    align-items: center;
+    object-fit: contain;
 }
