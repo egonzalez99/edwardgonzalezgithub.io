@@ -27,6 +27,15 @@ h1, h2, h3, h4 {
     text-align: center;
 }
 
+h5 {
+    font-size: 30px;
+    color: black;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    text-decoration: underline;
+}
+
 nav a {
     color: white;
     margin-left: 20px;
@@ -37,13 +46,6 @@ nav a:hover {
     text-decoration: underline;
 }
 
-.profile, .contact-icons {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
 section {
     padding: 60px 20px;
     background: #ddd;
@@ -51,45 +53,15 @@ section {
 }
 
 .container {
-    max-width: 800px;
-    margin: auto;
-    text-align: center;
-}
-
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px; 
-    justify-items: center;
-  }
-
-  .skills-grid > div {
-    background-color: #f1f1f1;
-    border: 1px solid black;
-    padding: 10px;
-    font-size: 30px;
-    text-align: center;
-  }
-
-.box {
-    background: white;
-    padding: 20px;
-    border: 1px solid #bbb;
-    text-align: center;
-    width: 200px;    
-    height: 200px;
-    min-width: 200px;
+    display: flex;
+    justify-content: center;
     align-items: center;
-
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
 
-.box img {
-    width: 100px;
-    height: 100px;
-    align-items: center;
-    object-fit: contain;
-}
-
+/* about section */
 .box-about {
     background: white;
     width: 500px;
@@ -108,6 +80,14 @@ section {
     font-size: 20px;
 }
 
+.box-profileimg img {
+    border-radius: 50%;
+    width: 500px; 
+    height: 500px;
+    object-fit: cover;
+}
+
+/* projects section */
 .box-desc {
     background: white;
     width: 500px;
@@ -120,18 +100,72 @@ section {
     font-size: 20px;
     white-space: normal;
     font-weight: bold;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
 }
 
-.box-profileimg img {
-    border-radius: 50%;
-    width: 500px; 
-    height: 500px;
-    object-fit: cover;
+.box-desc:hover {
+  box-shadow: 0 50px 50px 0 rgba(0,0,0,0.5);
 }
 
+.box-desc img {
+    width: 100%;
+    max-width: 100%; /* avoids overflow */
+    height: auto; /* keep aspect ratio */
+    max-height: 250px; /* never exceed this value */
+    display: block;
+    margin: 0 auto;
+    object-fit: contain;
+}
+
+/* skills section */
+.skills-grid {
+    display: flex;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px; 
+    justify-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.skills-grid > div {
+    background-color: #f1f1f1;
+    border: 1px solid black;
+    padding: 10px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.box-skill {
+    background: white;
+    padding: 20px;
+    border: 1px solid #bbb;
+    text-align: center;
+    width: 200px;    
+    height: 200px;
+    min-width: 200px;
+    align-items: center;
+
+}
+
+.box-skill img {
+    width: 100px;
+    height: 100px;
+    align-items: center;
+    object-fit: contain;
+}
+
+/* contacts section */
 .contact-icons img {
     width: 200px;
     height: 200px;
     align-items: center;
     object-fit: contain;
+}
+
+.profile, .contact-icons {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
