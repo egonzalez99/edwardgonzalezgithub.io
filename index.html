@@ -8,105 +8,101 @@
 </head>
 <body>
 
-    <header>
-    <div><strong>Edward Gonzalez</strong></div>
-    <nav>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
-    </nav>
-    </header>
+    <div class="file-container">
+        <div class="side-tabs">
+            <a href="#about" class="tab tab-red">About</a>
+            <a href="#projects" class="tab tab-green">Projects</a>
+            <a href="#skills" class="tab tab-blue">Skills</a>
+            <a href="#contact" class="tab tab-yellow">Contact</a>
+        </div>
 
-    <h1>ABOUT</h1>
+        <div class="file-content">
 
-    <section id="about">
-    <div class="container profile">
+        <div class="flip-container">
 
-        <div class="box-profileimg"> <img src="assets/profile-img.png" alt="Profile Image" > </div>
-        <div class="box-about">Hi, I’m Edward Gonzalez, a Computer Science student in the Emerging 
-            Media department at CUNY. I’m passionate about exploring the intersection of 
-            technology, creativity, art, and digital media.</div>
-    </div>
-    </section>
+        <section id="about" class="tab-section on">
+            <div class="container profile">
 
-    <h2> PROJECTS</h2>
+                <div class="box-profileimg"> <img src="assets/profile-img.png" alt="Profile Image" > </div>
+                <div class="box-about">Hi, I’m Edward Gonzalez, a Computer Science student in the Emerging 
+                    Media department at CUNY. I’m passionate about exploring the intersection of 
+                    technology, creativity, art, and digital media.</div>
+            </div>
+        </section>
 
-    <section id="projects">
-    <div class="container skills">
+        <section id="projects" class="tab-section">
+            <div class="container skills">
 
-        <div class="proj-grid">
+                <div class="proj-grid">
 
-            <div class="box-desc"> <img src="assets/datavisualapp.png"> 
-                <h5> Weather & Search: Sonic Patterns </h5>
-                    This project visualizes weather and search term data with D3, enhanced by data sonification, 
-                    to explore potential correlations. It’s an interactive data experience focused on engaging 
-                    visuals and immersive sound, inviting users to explore data in a fun and interactive way.
-                <p> <a href="https://github.com/egonzalez99/Weather-and-Search--Sonic-Patterns"> GitHub Page ➝</a></p>
+                    <div class="box-desc"> <img src="assets/datavisualapp.png"> 
+                        <h5> Weather & Search: Sonic Patterns </h5>
+                            This project visualizes weather and search term data with D3, enhanced by data sonification, 
+                            to explore potential correlations. It’s an interactive data experience focused on engaging 
+                            visuals and immersive sound, inviting users to explore data in a fun and interactive way.
+                        <p> <a href="https://github.com/egonzalez99/Weather-and-Search--Sonic-Patterns"> GitHub Page ➝</a></p>
+                    </div>
+
+                    <div class="box-desc"> <img src="assets/chi-logo.png"> 
+                        <h5> AI Media Control </h5>
+                            This internship centers on creating an AI-powered media control system that seamlessly blends 
+                            artificial intelligence with digital media to enhance the visual experience of a puppet show. 
+                        <p> <a href="https://github.com/CHI-CityTech/AI_Media_Control"> GitHub Page ➝</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="tab-section">
+            <h3>FRONT-END</h3>
+
+            <div class="skills-grid">
+                <div class="box-skill"> <img src="assets/html-logo.png"> <br> HTML </div>
+                <div class="box-skill"> <img src="assets/css-logo.png"> <br> CSS </div>
+                <div class="box-skill"> <img src="assets/js-logo.png"> <br> JavaScript </div>
             </div>
 
-            <div class="box-desc"> <img src="assets/chi-logo.png"> 
-                <h5> AI Media Control </h5>
-                    This internship centers on creating an AI-powered media control system that seamlessly blends 
-                    artificial intelligence with digital media to enhance the visual experience of a puppet show. 
-                <p> <a href="https://github.com/CHI-CityTech/AI_Media_Control"> GitHub Page ➝</a></p>
+            <h3>BACK-END</h3>
+            <div class="skills-grid">
+                <div class="box-skill"> <img src="assets/java-logo.png"> <br> Java </div>
+                <div class="box-skill"> <img src="assets/py-logo.png"> <br> Python  </div>
+                <div class="box-skill"> <img src="assets/sql-logo.png"> <br> SQL  </div>
+                <div class="box-skill"> <img src="assets/cs-logo.png"> <br> C#  </div> 
+                <div class="box-skill"> <img src="assets/cpp-logo.png"> <br> C++  </div>
             </div>
+
+            <h3>TOOLS & PRODDUCTIVITY</h3>
+            <div class="skills-grid">
+                <div class="box-skill"> <img src="assets/365-logo.png"> <br> Microsoft Office 365 </div>
+                <div class="box-skill"> <img src="assets/googleworkspace-logo.jpeg"> <br> Google Workspace </div>
+                <div class="box-skill"> <img src="assets/slack-logo.png" > <br> Slack </div>
+            </div>        
+        </section>
+
+        <section id="contact" class="tab-section">
+            <div class="container">
+                <div class="contact-icons">
+                <a href="https://github.com/egonzalez99">
+                    <img src="assets/github-logo.png" alt="GitHub Profile" />
+                </a>
+
+                <a href="https://www.linkedin.com/in/edward-gonzalez-37a144172">
+                    <img src="assets/linkedin-logo.png" alt="LinkedIn Profile" />
+                </a>
+
+                <a href="mailto:bryangonzalez040@gmail.com">
+                    <img src="assets/email-logo2.png" alt="Email Me" />
+                </a>
+                </div>
+            </div>
+        </section>            
+        </div>
+
+
         </div>
     </div>
-       
-        
-    </div>
-    </section>
 
-    <h3>SKILLS</h3>
-
-    <section id="skills">
-
-        <h3>FRONT-END</h3>
-
-        <div class="skills-grid">
-            <div class="box-skill"> <img src="assets/html-logo.png"> <br> HTML </div>
-            <div class="box-skill"> <img src="assets/css-logo.png"> <br> CSS </div>
-            <div class="box-skill"> <img src="assets/js-logo.png"> <br> JavaScript </div>
-        </div>
-
-        <h3>BACK-END</h3>
-        <div class="skills-grid">
-            <div class="box-skill"> <img src="assets/java-logo.png"> <br> Java </div>
-            <div class="box-skill"> <img src="assets/py-logo.png"> <br> Python  </div>
-            <div class="box-skill"> <img src="assets/sql-logo.png"> <br> SQL  </div>
-            <div class="box-skill"> <img src="assets/cs-logo.png"> <br> C#  </div> 
-            <div class="box-skill"> <img src="assets/cpp-logo.png"> <br> C++  </div>
-        </div>
-
-        <h3>TOOLS & PRODDUCTIVITY</h3>
-        <div class="skills-grid">
-            <div class="box-skill"> <img src="assets/365-logo.png"> <br> Microsoft Office 365 </div>
-            <div class="box-skill"> <img src="assets/googleworkspace-logo.jpeg"> <br> Google Workspace </div>
-            <div class="box-skill"> <img src="assets/slack-logo.png" > <br> Slack </div>
-        </div>        
-
-    </section>
-
-  <h4>CONTACTS</h4>
-
-    <section id="contact">
-    <div class="container">
-        <div class="contact-icons">
-        <a href="https://github.com/egonzalez99">
-            <img src="assets/github-logo.png" alt="GitHub Profile" />
-        </a>
-
-        <a href="https://www.linkedin.com/in/edward-gonzalez-37a144172">
-            <img src="assets/linkedin-logo.png" alt="LinkedIn Profile" />
-        </a>
-
-        <a href="mailto:bryangonzalez040@gmail.com">
-            <img src="assets/email-logo2.png" alt="Email Me" />
-        </a>
-        </div>
-    </div>
-    </section>
-
+    <script src="main.js"></script>
+    <script src="tabs.js"></script>
 </body>
 </html>
