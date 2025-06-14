@@ -100,6 +100,8 @@ section {
 
 /* tab style */
 .tab {
+    display: flex;
+    position: relative;
     writing-mode: vertical-rl;
     text-orientation: upright;
     background: #999;
