@@ -20,7 +20,7 @@ body {
     font-family: 'Courier New', Courier, monospace;
     overflow-x: hidden;
     display: flex;
-    background: #c0b38f;
+    background: #c99c37;
     min-height: 100vh;
     padding: 20px;
     background-image: url("../assets/newyork.svg");
@@ -33,7 +33,7 @@ body {
 header {
     position: sticky;
     top: 0;
-    background: #444;
+    background: black;
     color: white;
     padding: 10px 20px;
     display: flex;
@@ -45,10 +45,10 @@ header {
 h1, h2, h4 {
     font-size: 16px;
     letter-spacing: 3px;
-    color: #c0b38f;
+    color: #c99c37;
     text-align: center;
     margin: 28px 0 14px;
-    border-bottom: 1px solid #555;
+    border-bottom: 1px solid #c99c37;
     padding-bottom: 6px;
     font-weight: bold;
 }
@@ -56,10 +56,10 @@ h1, h2, h4 {
 h3 {
     font-size: 16px;
     letter-spacing: 3px;
-    color: #c0b38f;
+    color: #c99c37;
     text-align: center;
     margin: 48px 0 46px;
-    border-bottom: 1px solid #555;
+    border-bottom: 1px solid ;
     padding-bottom: 16px;
     font-weight: bold;
 }
@@ -68,7 +68,7 @@ h5 {
     font-weight: bold;
     text-align: center;
     margin: 8px 0 6px;
-    color: #333;
+    color: #c99c37;
     text-decoration: none;
 }
 
@@ -106,9 +106,9 @@ section {
 }
 
 .file-content {
-    background: #3d3d3d;
-    border: 3px solid #333;
-    box-shadow: 0 0 60px rgba(0,0,0,10);
+    background: #091527;
+    border: 3px solid #c99c37;
+    box-shadow: 0 8px 20px #c99c37;
     padding: 36px 30px;
     flex: 1;
     min-height: 770px;
@@ -132,7 +132,7 @@ section {
     font-weight: bold;
     font-family: 'Courier New', Courier, monospace;
     font-size: 16px;
-    color: #1a1a1a;
+    color: black;
     text-decoration: none;
     border-radius: 10px 0 0 10px;
     cursor: pointer;
@@ -190,7 +190,7 @@ section {
 .section-label {
     font-size: 16px;
     letter-spacing: 4px;
-    color: #888;
+    color: #c99c37;
     text-align: center;
     margin-bottom: 20px;
     text-transform: uppercase;
@@ -215,24 +215,29 @@ section {
     align-items: center;
     display: flex;
     object-fit: cover;
-    border: 4px solid #c0b38f;
+    border: 4px solid #c99c37;
+    box-shadow: 0 8px 20px #c99c37;
+
 }
 
 .box-about {
     margin-top: 150px;
     justify-content: center;
     align-items: center;
+    text-justify: inter-word;
     display: flex;
-    background: #f9f5ee;
+    background: white;
     max-width: 380px;
     padding: 20px 22px;
-    border-left: 4px solid #c0b38f;
+    border: 4px solid #c99c37;
     border-radius: 0 6px 6px 0;
     font-size: 16px;
     line-height: 1.75;
-    color: #222;
-    font-weight: 500;
+    color: black;
+    font-weight: 600;
     font-style: italic;
+    box-shadow: 0 8px 20px #c99c37;
+
 }
 
 /* ── Projects ── */
@@ -245,23 +250,23 @@ section {
 }
 
 .box-desc {
-    background: #f9f5ee;
+    background: white;
     width: 260px;
     flex: 1 1 240px;
     max-width: 300px;
     padding: 16px;
     border-radius: 6px;
-    border-top: 4px solid #c0b38f;
+    border: 4px solid #c99c37;
     font-size: 16px;
     line-height: 1.65;
-    color: #222;
-    font-weight: 500;
+    color: black;
+    font-weight: 600;
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .box-desc:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(255, 255, 255, 10);
+    box-shadow: 0 8px 20px #c99c37;
 }
 
 .box-desc img {
@@ -270,7 +275,7 @@ section {
     object-fit: contain;
     display: block;
     margin-bottom: 10px;
-    background: #eee;
+    background: white;
     border-radius: 4px;
     padding: 6px;
 }
@@ -314,7 +319,7 @@ section {
     gap: 6px;
     font-size: 16px;
     font-weight: bold;
-    color: #333;
+    color: black;
     transition: transform 0.18s, box-shadow 0.18s;
     text-align: center;
     padding: 8px 4px;
@@ -322,7 +327,7 @@ section {
 
 .box-skill:hover {
     transform: translateY(-10px);
-    box-shadow: 0 8px 20px rgba(255, 255, 255, 50);
+    box-shadow: 0 8px 12px #c99c37;
 }
 
 .box-skill img {
@@ -357,17 +362,17 @@ section {
 .contact-icons a:hover {
     transform: translateY(-4px);
     opacity: 0.8;
-    box-shadow: 0 8px 20px rgba(255, 255, 255, 50);
+    box-shadow: 0 8px 30px #c99c37;
 }
 
 .contact-icons img {
     width: 64px;
     height: 64px;
     object-fit: contain;
-    background: #f9f5ee;
+    background: white;
     border-radius: 50%;
     padding: 10px;
-    border: 2px solid #c0b38f;
+    border: 2px solid #c99c37;
 }
 
 .profile, .skills {
@@ -375,4 +380,31 @@ section {
     gap: 20px;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+/* sub nav in projects page */
+.sub-nav {
+    display: flex;
+    gap: 12px;
+    padding: 12px 20px;
+    border-bottom: 1px solid rgba(201, 156, 55, 0.3);
+    margin-bottom: 20px;
+}
+
+.sub-tab {
+    background: transparent;
+    border: 1px solid #c99c37;
+    color: #c99c37;
+    padding: 6px 18px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+.sub-tab:hover,
+.sub-tab.active {
+    background: #c99c37;
+    color: #0a0f1e;
+    font-weight: bold;
 }

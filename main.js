@@ -21,3 +21,23 @@
       });
     });
   });
+
+  // sub tabs on project section page
+function showSubTab(id, btn) {
+
+    // hide sub-sections 
+    document.querySelectorAll(".sub-section").forEach(s => {
+        s.style.display = "none";
+    });
+
+    document.querySelectorAll(".sub-tab").forEach(b => {
+        b.classList.remove("active");
+    });
+
+    document.getElementById(id).style.display = "block";
+
+    // set active on clicked
+    btn.classList.add("active-sub");
+}
+
+  // button for projects to show more 

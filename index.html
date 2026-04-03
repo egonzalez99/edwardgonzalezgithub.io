@@ -20,7 +20,7 @@
 
         <div class="flip-container">
 
-        <section id="about" class="tab-section on">
+        <section id="about" class="tab-section">
             <div class="container profile">
 
                 <div class="box-profileimg"> <img src="assets/profile-img.png" alt="Profile Image" > </div>
@@ -30,28 +30,55 @@
             </div>
         </section>
 
-        <section id="projects" class="tab-section">
-            <div class="container skills">
+    <section id="projects" class="tab-section">
 
+        <!-- Sub-navbar -->
+        <div class="sub-nav">
+            <button class="sub-tab active" onclick="showSubTab('coding')">Coding Projects </button>
+            <button class="sub-tab" onclick="showSubTab('editing')"> Video Edits </button>
+        </div>
+
+        <!-- Coding Projects -->
+        <div id="coding" class="sub-section">
+            <div class="container skills">
                 <div class="proj-grid">
 
-                    <div class="box-desc"> <img src="assets/datavisualapp.png"> 
-                        <h5> Weather & Search: Sonic Patterns </h5>
-                            This project visualizes weather and search term data with D3, enhanced by data sonification, 
-                            to explore potential correlations. It’s an interactive data experience focused on engaging 
-                            visuals and immersive sound, inviting users to explore data in a fun and interactive way.
-                        <p> <a href="https://github.com/egonzalez99/Weather-and-Search--Sonic-Patterns"> GitHub Page ➝</a></p>
+                    <div class="box-desc">
+                        <img src="assets/datavisualapp.png">
+                        <h5>Weather & Search: Sonic Patterns</h5>
+                        This project visualizes weather and search term data with D3, enhanced by 
+                        data sonification, to explore potential correlations.
+                        <p><a href="https://github.com/egonzalez99/Weather-and-Search--Sonic-Patterns">GitHub Page ➝</a></p>
                     </div>
 
-                    <div class="box-desc"> <img src="assets/chi-logo.png"> 
-                        <h5> AI Media Control </h5>
-                            This internship centers on creating an AI-powered media control system that seamlessly blends 
-                            artificial intelligence with digital media to enhance the visual experience of a puppet show. 
-                        <p> <a href="https://github.com/CHI-CityTech/AI_Media_Control"> GitHub Page ➝</a></p>
+                    <div class="box-desc">
+                        <img src="assets/chi-logo.png">
+                        <h5>AI Media Control</h5>
+                        This internship centers on creating an AI-powered media control system that 
+                        blends artificial intelligence with digital media to enhance the visual 
+                        experience of a puppet show.
+                        <p><a href="https://github.com/CHI-CityTech/AI_Media_Control">GitHub Page ➝</a></p>
                     </div>
+
                 </div>
             </div>
-        </section>
+        </div>
+
+        <!-- Editing & Video -->
+        <div id="editing" class="sub-section" style="display:none;">
+            <div class="container skills">
+                <div class="proj-grid">
+
+                    <div class="box-desc">
+                        <h5>Video 1</h5>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
 
         <section id="skills" class="tab-section">
             <h3>FRONT-END</h3>
@@ -71,7 +98,7 @@
                 <div class="box-skill"> <img src="assets/cpp-logo.png"> <br> C++  </div>
             </div>
 
-            <h3>TOOLS & PRODDUCTIVITY</h3>
+            <h3>TOOLS & PRODUCTIVITY</h3>
             <div class="skills-grid">
                 <div class="box-skill"> <img src="assets/365-logo.png"> <br> Microsoft Office </div>
                 <div class="box-skill"> <img src="assets/googleworkspace-logo.jpeg"> <br> Google Workspace </div>
