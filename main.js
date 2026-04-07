@@ -41,3 +41,6 @@ function showSubTab(id, btn) {
 }
 
   // button for projects to show more 
+let slideIndex = 1;
+showSlides(slideIndex);
+
