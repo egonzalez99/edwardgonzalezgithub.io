@@ -44,3 +44,15 @@ function showSubTab(id, btn) {
 let slideIndex = 1;
 showSlides(slideIndex);
 
+function plusSlides(n) {
+  showSlides(slideIndex = slideIndex + n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let 
+}
