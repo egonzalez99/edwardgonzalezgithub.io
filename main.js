@@ -24,35 +24,29 @@
 
   // sub tabs on project section page
 function showSubTab(id, btn) {
-
-    // hide sub-sections 
-    document.querySelectorAll(".sub-section").forEach(s => {
-        s.style.display = "none";
-    });
-
-    document.querySelectorAll(".sub-tab").forEach(b => {
-        b.classList.remove("active");
-    });
-
-    document.getElementById(id).style.display = "block";
-
-    // set active on clicked
-    btn.classList.add("active-sub");
+    document.querySelectorAll('.sub-section').forEach(s => s.style.display = 'none');
+    document.querySelectorAll('.sub-tab').forEach(b => b.classList.remove('active'));
+    document.getElementById(id).style.display = 'block';
+    btn.classList.add('active');
+    // reset carousel position when switching tabs
+    carPos[id] = 0;
+    document.getElementById(id + '-track').style.transform = 'translateX(0)';
 }
 
-  // button for projects to show more 
-let slideIndex = 1;
-showSlides(slideIndex);
+const carPos = { coding: 0, editing: 0 };
 
-function plusSlides(n) {
-  showSlides(slideIndex = slideIndex + n);
+function slide(section, dir) {
+    const track = document.getElementById(section + '-track');
+    const cards = track.querySelectorAll('.box-desc');
+    const total = cards.length;
+    const visible = 3;
+    const maxPos = total - visible;
+
+    // loop around cards
+    carPos[section] = (carPos[section] + dir + (maxPos + 1)) % (maxPos + 1);
+
+    // card width + gap
+    const cardWidth = track.querySelector('.box-desc').offsetWidth + 16;
+    track.style.transform = `translateX(-${carPos[section] * cardWidth}px)`;
 }
 
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-  let i;
-  let 
-}
