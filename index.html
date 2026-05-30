@@ -6,6 +6,17 @@
     <title>Edward Gonzalez's ePortfolio</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
+<div id="lightbox" onclick="closeLightbox()">
+    <span id="lightbox-close">✕</span>
+    <img id="lightbox-img" src="">
+</div>
+
+<div id="video-lightbox" onclick="closeVideo()">
+    <span id="video-close">✕</span>
+    <iframe id="lightbox-video" src="" width="960" height="540" frameborder="0" allowfullscreen></iframe>
+</div>
+
 <body>
     
     <div class="file-container">
@@ -13,7 +24,6 @@
             <a href="#about" class="tab tab-red">ABOUT</a>
             <a href="#projects" class="tab tab-green">PROJECTS</a>
             <a href="#skills" class="tab tab-blue">SKILLS</a>
-            <a href="#contact" class="tab tab-yellow">CONTACT</a>
         </div>
 
         <div class="file-content">
@@ -28,14 +38,34 @@
                     Media department at CUNY. I’m passionate about exploring the intersection of 
                     technology, creativity, art, and digital media.</div>
             </div>
+
+            <h3> Socials and Contact</h3>
+            <p class="report-notice">⚠️ All videos and photos are my own. If you see them used without credit, please contact me.</p>
+
+            <div class="container">
+                <div class="contact-icons">
+                <a href="https://github.com/egonzalez99">
+                    <img src="assets/pictures/github-logo.png" alt="GitHub Profile" />
+                </a>
+
+                <a href="https://www.linkedin.com/in/edward-gonzalez-37a144172">
+                    <img src="assets/pictures/linkedin-logo.png" alt="LinkedIn Profile" />
+                </a>
+
+                <a href="mailto:bryangonzalez040@gmail.com">
+                    <img src="assets/pictures/email-logo2.png" alt="Email Me" />
+                </a>
+                </div>
+            </div>
+
         </section>
 
 <section id="projects" class="tab-section">
-
     <!-- Sub-navbar -->
     <div class="sub-nav">
         <button class="sub-tab active" onclick="showSubTab('coding', this)">Coding Projects</button>
         <button class="sub-tab" onclick="showSubTab('editing', this)">Video Editing</button>
+        <button class="sub-tab" onclick="showSubTab('photo', this)">Photographs </button>
     </div>
 
     <!-- Coding Projects -->
@@ -43,40 +73,28 @@
         <div class="carousel">
             <button class="car-btn car-prev" onclick="slide('coding', -1)">&#10094;</button>
             <div class="car-track-wrap">
+                
                 <div class="car-track" id="coding-track">
-
-                    <div class="box-desc">
-                        <img src="assets/datavisualapp.png">
-                        <h5>Weather & Search: Sonic Patterns</h5>
-                        This project visualizes weather and search term data with D3, enhanced by
-                        data sonification, to explore potential correlations.
-                        <p><a href="https://github.com/egonzalez99/Weather-and-Search--Sonic-Patterns">GitHub Page ➝</a></p>
+                    <div class="box-desc photo-card" onclick="window.open('https://github.com/egonzalez99/Weather-and-Search--Sonic-Patterns', '_blank')">
+                        <img src="assets/pictures/datavisualapp.png" alt="Weather & Search">
+                        <h5> Weather & Search Data - Sonicification Patterns</h5>
                     </div>
 
-                    <div class="box-desc">
-                        <img src="assets/chi-logo.png">
-                        <h5>AI Media Control</h5>
-                        This internship centers on creating an AI-powered media control system that
-                        blends artificial intelligence with digital media.
-                        <p><a href="https://github.com/CHI-CityTech/AI_Media_Control">GitHub Page ➝</a></p>
+                    <div class="box-desc photo-card" onclick="window.open('https://github.com/CHI-CityTech/AI_Media_Control', '_blank')">
+                        <img src="assets/pictures/chi-logo.png">
+                        <h5>AI Media Control - Image Manipulation Real Time</h5>
                     </div>
 
-                    <div class="box-desc">
-                        <h5>Project 3</h5>
-                        Description here.
-                        <p><a href="#">GitHub Page ➝</a></p>
+                    <div class="box-desc photo-card" onclick="window.open('https://chromewebstore.google.com/detail/quick-notes/mbheehmaihbblldpnnklenencmodhncd', '_blank')">
+                        <img src="assets/pictures/notes.png">
+                        <h5> Quick Notes Live Chrome Extension</h5>
                     </div>
 
-                    <div class="box-desc">
-                        <h5>Project 4</h5>
-                        Description here.
-                        <p><a href="#">GitHub Page ➝</a></p>
-                    </div>
-
-                    <div class="box-desc">
-                        <h5>Project 5</h5>
-                        Description here.
-                        <p><a href="#">GitHub Page ➝</a></p>
+                    <div class="box-desc photo-card" onclick="window.open('https://github.com/entertainmenttechnology/Pokorny-ENT3320-Spring2024', '_blank')">
+                        <video autoplay muted loop>
+                            <source src="assets/videos/20240509_180118.mp4" type="video/mp4">
+                        </video>
+                        <h5>Plinko Board - Randomize Synth Music</h5>
                     </div>
 
                 </div>
@@ -90,35 +108,67 @@
         <div class="carousel">
             <button class="car-btn car-prev" onclick="slide('editing', -1)">&#10094;</button>
             <div class="car-track-wrap">
+
                 <div class="car-track" id="editing-track">
-
-                    <div class="box-desc">
+                    <div class="box-desc video-card" onclick="openVideo('https://www.youtube.com/embed/V_8SNiKadWk')">
+                        <img src="https://img.youtube.com/vi/V_8SNiKadWk/hqdefault.jpg" alt="Video Editing 1">
+                        <div class="play-btn">&#9654;</div>
                         <h5>Video Editing 1</h5>
-                        <iframe src="https://www.youtube.com/embed/V_8SNiKadWk"
-                            width="100%" height="200" frameborder="0" allowfullscreen></iframe>
                     </div>
-
-                    <div class="box-desc">
+                    <div class="box-desc video-card" onclick="openVideo('https://www.youtube.com/embed/dISZDJrmSIU')">
+                        <img src="https://img.youtube.com/vi/dISZDJrmSIU/hqdefault.jpg" alt="Video Editing 2">
+                        <div class="play-btn">&#9654;</div>
                         <h5>Video Editing 2</h5>
-                        <iframe src="https://www.youtube.com/embed/dISZDJrmSIU"
-                            width="100%" height="200" frameborder="0" allowfullscreen></iframe>
                     </div>
-
-                    <div class="box-desc">
+                    <div class="box-desc video-card" onclick="openVideo('https://www.youtube.com/embed/E8gKMJTsccg')">
+                        <img src="https://img.youtube.com/vi/E8gKMJTsccg/hqdefault.jpg" alt="Video Editing 3">
+                        <div class="play-btn">&#9654;</div>
                         <h5>Video Editing 3</h5>
-                        <iframe src="https://www.youtube.com/embed/YOUR_ID"
-                            width="100%" height="200" frameborder="0" allowfullscreen></iframe>
-                    </div>
-
-                    <div class="box-desc">
-                        <h5>Video Editing 4</h5>
-                        <iframe src="https://www.youtube.com/embed/YOUR_ID"
-                            width="100%" height="200" frameborder="0" allowfullscreen></iframe>
                     </div>
 
                 </div>
             </div>
             <button class="car-btn car-next" onclick="slide('editing', 1)">&#10095;</button>
+        </div>
+    </div>
+
+    <!-- Photograph Section -->
+    <div id="photo" class="sub-section" style="display:none;">
+        <div class="carousel">
+            <button class="car-btn car-prev" onclick="slide('photo', -1)">&#10094;</button>
+            <div class="car-track-wrap">
+                <div class="car-track" id="photo-track">
+
+                    <div class="box-desc photo-card" onclick="openPhoto('assets/camera/20190721_202804.jpg')">
+                        <img src="assets/camera/20190721_202804.jpg" alt="Brooklyn">
+                        <h5>Photograph 1</h5>
+                    </div>
+
+                    <div class="box-desc photo-card" onclick="openPhoto('assets/camera/1000030013.jpg')">
+                        <img src="assets/camera/1000030013.jpg" alt="Photograph 2">
+                        <h5>Photograph 2</h5>
+                    </div>
+
+                    <div class="box-desc photo-card" onclick="openPhoto('assets/camera/1000030301.jpg')">
+                        <img src="assets\camera\1000030301.jpg" alt="Photograph 3">
+                        <h5>Photograph 3</h5>
+                    </div>
+
+                    <div class="box-desc photo-card" onclick="openPhoto('assets/camera/20240429_145237.jpg')">
+                        <img src="assets\camera\20240429_145237.jpg" alt="Photograph 4">
+                        <h5>Photograph 4</h5>
+                    </div>
+                    <div class="box-desc photo-card" onclick="openPhoto('assets/camera/1000031019.jpg')">
+                        <img src="assets\camera\1000031019.jpg" alt="Photograph 5">
+                        <h5>Photograph 5</h5>
+                    </div>
+                    <div class="box-desc photo-card" onclick="openPhoto('assets/camera/20220901_120910.jpg')">
+                        <img src="assets\camera\20220901_120910.jpg" alt="Photograph 6">
+                        <h5>Photograph 6</h5>
+                    </div>
+                </div>
+            </div>
+            <button class="car-btn car-next" onclick="slide('photo', 1)">&#10095;</button>
         </div>
     </div>
 
@@ -128,52 +178,31 @@
             <h3>FRONT-END</h3>
 
             <div class="skills-grid">
-                <div class="box-skill"> <img src="assets/html-logo.png"> <br> HTML </div>
-                <div class="box-skill"> <img src="assets/css-logo.png"> <br> CSS </div>
-                <div class="box-skill"> <img src="assets/js-logo.png"> <br> JavaScript </div>
+                <div class="box-skill"> <img src="assets/pictures/html-logo.png"> <br> HTML </div>
+                <div class="box-skill"> <img src="assets/pictures/css-logo.png"> <br> CSS </div>
+                <div class="box-skill"> <img src="assets/pictures/js-logo.png"> <br> JavaScript </div>
             </div>
 
             <h3>BACK-END</h3>
             <div class="skills-grid">
-                <div class="box-skill"> <img src="assets/java-logo.png"> <br> Java </div>
-                <div class="box-skill"> <img src="assets/py-logo.png"> <br> Python  </div>
-                <div class="box-skill"> <img src="assets/sql-logo.png"> <br> SQL  </div>
-                <div class="box-skill"> <img src="assets/cs-logo.png"> <br> C#  </div> 
-                <div class="box-skill"> <img src="assets/cpp-logo.png"> <br> C++  </div>
+                <div class="box-skill"> <img src="assets/pictures/java-logo.png"> <br> Java </div>
+                <div class="box-skill"> <img src="assets/pictures/py-logo.png"> <br> Python  </div>
+                <div class="box-skill"> <img src="assets/pictures/sql-logo.png"> <br> SQL  </div>
+                <div class="box-skill"> <img src="assets/pictures/cs-logo.png"> <br> C#  </div> 
+                <div class="box-skill"> <img src="assets/pictures/cpp-logo.png"> <br> C++  </div>
             </div>
 
             <h3>TOOLS & PRODUCTIVITY</h3>
             <div class="skills-grid">
-                <div class="box-skill"> <img src="assets/365-logo.png"> <br> Microsoft Office </div>
-                <div class="box-skill"> <img src="assets/googleworkspace-logo.jpeg"> <br> Google Workspace </div>
-                <div class="box-skill"> <img src="assets/slack-logo.png" > <br> Slack </div>
+                <div class="box-skill"> <img src="assets/pictures/365-logo.png"> <br> Microsoft Office </div>
+                <div class="box-skill"> <img src="assets/pictures/googleworkspace-logo.jpeg"> <br> Google Workspace </div>
+                <div class="box-skill"> <img src="assets/pictures/slack-logo.png" > <br> Slack </div>
+                <div class="box-skill"> <img src="assets/pictures/davinci.jpg"> Davinci Resolve</div>
+                <div class="box-skill"> <img src="assets/pictures/adobelogo.jpg"> Adobe Express </div>
+                <div class="box-skill"> <img src="assets/pictures/adobecreative.jpg"> Adobe Creative </div>
+                <div class="box-skill"> <img src="assets/pictures/cpacut.png"> CapCut </div>
             </div>        
         </section>
-
-        <section id="contact" class="tab-section">
-            <h3> Socials and Contact</h3>
-
-            <div class="container">
-                <div class="contact-icons">
-                <a href="https://github.com/egonzalez99">
-                    <img src="assets/github-logo.png" alt="GitHub Profile" />
-                </a>
-
-                <a href="https://www.linkedin.com/in/edward-gonzalez-37a144172">
-                    <img src="assets/linkedin-logo.png" alt="LinkedIn Profile" />
-                </a>
-
-                <a href="mailto:bryangonzalez040@gmail.com">
-                    <img src="assets/email-logo2.png" alt="Email Me" />
-                </a>
-                </div>
-            </div>
-        </section>            
-        </div>
-
-
-        </div>
-    </div>
 
     <script src="main.js"></script>
 </body>

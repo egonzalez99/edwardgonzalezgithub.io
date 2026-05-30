@@ -50,3 +50,30 @@ function slide(section, dir) {
     track.style.transform = `translateX(-${carPos[section] * cardWidth}px)`;
 }
 
+function openPhoto(src) {
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox').classList.add('open');
+}
+
+function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+}
+
+// close lightbox with Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeLightbox();
+});
+
+function openVideo(src) {
+    document.getElementById('lightbox-video').src = src + '?autoplay=1';
+    document.getElementById('video-lightbox').classList.add('open');
+}
+
+function closeVideo() {
+    document.getElementById('lightbox-video').src = ''; // stops video playing
+    document.getElementById('video-lightbox').classList.remove('open');
+}
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeVideo();
+});
