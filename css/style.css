@@ -1,17 +1,3 @@
-/* Animating background-size forces the browser to recompute layout/paint on
-every frame. Animating transform and is a pseudo element */
-@keyframes breathe {
-    0%, 100% { transform: scale(1); }
-    50%      { transform: scale(0.8); }
-}
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    
-}
-
 html {
     scroll-behavior: smooth;
     overflow-x: hidden;
@@ -33,25 +19,14 @@ body::before {
     position: fixed;
     inset: 0;
     background-image: url("../assets/newyork.svg");
-    background-size: 45% auto;
+    background-size: 100% auto;
     background-position: center;
     background-repeat: no-repeat;
-    animation: breathe 10s ease-in-out infinite;
     will-change: transform;
     z-index: -1;
     pointer-events: none;
 }
 
-/* Respect users who've asked their OS/browser to reduce motion, and skip
-   the animation on phones by default since it costs battery/CPU for a
-   background flourish that's barely noticeable on a small screen. */
-@media (prefers-reduced-motion: reduce) {
-    body::before { animation: none; }
-}
-
-@media (max-width: 768px) {
-    body::before { animation: none; background-size: 90% auto; }
-}
 
 header {
     position: sticky;
