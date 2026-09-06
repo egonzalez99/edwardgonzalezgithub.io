@@ -1,7 +1,8 @@
+/* Animating background-size forces the browser to recompute layout/paint on
+every frame. Animating transform and is a pseudo element */
 @keyframes breathe {
-    0%   { background-size: 45% auto; }
-    50%  { background-size: 35% auto; }
-    100% { background-size: 45% auto; }
+    0%, 100% { transform: scale(1); }
+    50%      { transform: scale(0.8); }
 }
 
 * {
@@ -23,11 +24,33 @@ body {
     background: #c99c37;
     min-height: 100vh;
     padding: 20px;
-    background-image: url("../assets/newyork.svg");
-    background-size: contain;
-    background-position: center;
-    animation: breathe 10s ease-in-out infinite;
+    position: relative;
+    z-index: 0;
+}
 
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url("../assets/newyork.svg");
+    background-size: 45% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    animation: breathe 10s ease-in-out infinite;
+    will-change: transform;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Respect users who've asked their OS/browser to reduce motion, and skip
+   the animation on phones by default since it costs battery/CPU for a
+   background flourish that's barely noticeable on a small screen. */
+@media (prefers-reduced-motion: reduce) {
+    body::before { animation: none; }
+}
+
+@media (max-width: 768px) {
+    body::before { animation: none; background-size: 90% auto; }
 }
 
 header {
@@ -672,4 +695,164 @@ section {
     text-align: center;
     color: #d64b33;
     margin-bottom: 16px;
+}
+/* ============================================================
+   MOBILE RESPONSIVE STYLES
+   Everything above is the desktop layout; these overrides
+   reflow the same markup for narrow screens instead of relying
+   on the browser to squash the fixed-width desktop layout.
+   ============================================================ */
+@media (max-width: 900px) {
+    body {
+        padding: 10px;
+    }
+
+    .file-container {
+        flex-direction: column;
+    }
+
+    /* Side tabs become a horizontal bar across the top on mobile -
+       vertical writing-mode text is hard to read/tap on a phone. */
+    .side-tabs {
+        flex-direction: row;
+        justify-content: center;
+        gap: 10px;
+        padding-top: 0;
+        margin-bottom: 12px;
+        width: 100%;
+    }
+
+    .tab {
+        writing-mode: horizontal-tb;
+        text-orientation: mixed;
+        font-size: 14px;
+        padding: 10px 14px;
+        border-radius: 8px;
+        right: 0;
+    }
+    .tab:hover {
+        transform: none; /* avoid layout shift from hover on touch devices */
+    }
+
+    .file-content {
+        padding: 20px 14px;
+        min-height: auto;
+        border-radius: 6px;
+    }
+
+    .flip-container {
+        min-height: auto;
+    }
+
+    /* The 3D flip is subtle on desktop but is one more thing the phone's
+       GPU has to composite; a simple fade is just as effective and lighter. */
+    .tab-section {
+        transform: none;
+        transition: opacity 0.3s ease;
+        position: absolute;
+    }
+    .tab-section.on {
+        position: relative;
+    }
+
+    /* ── About ── */
+    .profile {
+        flex-direction: column;
+        gap: 16px;
+        padding: 10px 0;
+    }
+
+    .box-profileimg img {
+        margin: 0;
+        width: 160px;
+        height: 160px;
+    }
+
+    .box-about {
+        margin: 0;
+        max-width: 100%;
+        font-size: 16px;
+        padding: 16px;
+    }
+
+    .report-notice {
+        font-size: 15px;
+    }
+
+    .contact-icons {
+        gap: 18px;
+        padding: 20px 0;
+    }
+    .contact-icons img {
+        width: 48px;
+        height: 48px;
+    }
+
+    /* ── Projects / carousel ── */
+    .sub-nav {
+        flex-wrap: wrap;
+        gap: 8px;
+        padding: 8px 4px;
+    }
+    .sub-tab {
+        font-size: 14px;
+        padding: 6px 12px;
+    }
+
+    /* Show 1 card at a time on phones instead of squeezing 3 into the
+       screen width; main.js reads this via getVisibleCount() so the
+       carousel math (card width, wrap-around) stays correct. */
+    .car-track .box-desc {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .photo-card, .video-card, .coding-card {
+        height: 200px;
+    }
+
+    .box-desc {
+        margin-top: 0;
+        font-size: 15px;
+    }
+
+    /* ── Skills ── */
+    h3 {
+        margin: 28px 0 20px;
+        font-size: 15px;
+    }
+    .box-skill {
+        width: 74px;
+        height: 74px;
+        font-size: 13px;
+    }
+    .box-skill img {
+        width: 28px;
+        height: 28px;
+    }
+
+    #lightbox-close, #video-close {
+        top: 10px;
+        right: 16px;
+        font-size: 26px;
+    }
+
+    #video-lightbox iframe {
+        width: 95vw;
+        height: calc(95vw * 9 / 16);
+    }
+}
+
+@media (max-width: 480px) {
+    .side-tabs {
+        gap: 6px;
+    }
+    .tab {
+        font-size: 12px;
+        padding: 8px 10px;
+    }
+    .box-profileimg img {
+        width: 120px;
+        height: 120px;
+    }
 }
